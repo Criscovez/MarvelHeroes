@@ -40,7 +40,7 @@ struct ErrorView: View {
             
             //Boton de volver
             Button(action: {
-                self.vm.status = .none
+                self.vm.status = .loaded
             }, label: {
                 Text("Volver")
                     .font(.title2)
@@ -53,9 +53,7 @@ struct ErrorView: View {
             .padding(.bottom, 20)
             .id(2)
         }
-        .background(
-            LinearGradient(gradient: Gradient(colors: [.white, .yellow,.orange, .red]), startPoint: .topLeading, endPoint: .bottomTrailing)
-            )
+ 
     }
 }
 

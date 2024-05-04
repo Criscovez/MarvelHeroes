@@ -10,7 +10,7 @@ import SwiftUI
 
     struct HeroSeriesView: View {
         @State var heroID: String
-        @StateObject var viewModel = viewModelHeros()
+        @StateObject var viewModel = HeroSeriesViewModel()
         
         //@State private var filter: String = ""
         
@@ -44,5 +44,5 @@ import SwiftUI
     }
 
     #Preview {
-        HerosView(viewModel: viewModelHeros(mocked: true))
+        HerosView(viewModel: HerosViewModel(mocked: true))
     }

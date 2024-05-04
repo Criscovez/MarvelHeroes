@@ -6,42 +6,70 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 struct HeroSeriesRowView: View {
     var series: SerieResult //el modelo
     
     var body: some View {
         VStack{
-            
-            AsyncImage(url: URL(string: series.thumbnail.Image())) { Image in
-               
-                Image
+            ZStack{
+                KFImage.url(URL(string: series.thumbnail.Image())!)
+                
+                
+                    .placeholder({
+                        Image("Marvel_Logo_Red")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .cornerRadius(10)
+                            .padding([.leading, .trailing],20)
+                            .opacity(0.6)
+                    })
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .cornerRadius(10)
                     .padding([.leading, .trailing],20)
                     .opacity(0.6)
-            } placeholder: {
-                Image(systemName: "photo")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .cornerRadius(10)
-                    .padding([.leading, .trailing],20)
-                    .opacity(0.6)
+                
+                //            AsyncImage(url: URL(string: series.thumbnail.Image())) { Image in
+                //
+                //                Image
+                //                    .resizable()
+                //                    .aspectRatio(contentMode: .fit)
+                //                    .cornerRadius(10)
+                //                    .padding([.leading, .trailing],20)
+                //                    .opacity(0.6)
+                //            } placeholder: {
+                //                Image(systemName: "photo")
+                //                    .resizable()
+                //                    .aspectRatio(contentMode: .fit)
+                //                    .cornerRadius(10)
+                //                    .padding([.leading, .trailing],20)
+                //                    .opacity(0.6)
+                //            }
+                VStack{
+                    
+                    Text(series.title)
+                        .font(.title2)
+                        .foregroundStyle(.black)
+                        .bold()
+                        .padding()
+                    Spacer()
+                }
             }
-
+                
+            Text(series.description ?? "")
+                    .font(.system(size: 14))
+                    .foregroundStyle(.gray)
+                    .bold()
+                
+                //            if let favorite = hero.favorite {
+                //                Image(systemName: "heart.circle")
+                //                    .resizable()
+                //                    .foregroundStyle(favorite ? Color.red : Color.gray)
+                //                    .frame(width: 40, height: 40)
+                //            }
             
-            Text(series.title)
-                .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
-                .foregroundStyle(.gray)
-                .bold()
-            
-//            if let favorite = hero.favorite {
-//                Image(systemName: "heart.circle")
-//                    .resizable()
-//                    .foregroundStyle(favorite ? Color.red : Color.gray)
-//                    .frame(width: 40, height: 40)
-//            }
         }
     }
 }

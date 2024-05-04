@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 struct HerosRowView: View {
     var hero: HeroeResult //el modelo
@@ -13,22 +14,41 @@ struct HerosRowView: View {
     var body: some View {
         VStack{
             
-            AsyncImage(url: URL(string: hero.thumbnail.Image())) { Image in
-               
-                Image
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .cornerRadius(10)
-                    .padding([.leading, .trailing],20)
-                    .opacity(0.6)
-            } placeholder: {
-                Image(systemName: "photo")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .cornerRadius(10)
-                    .padding([.leading, .trailing],20)
-                    .opacity(0.6)
-            }
+          
+            KFImage.url(URL(string: hero.thumbnail.Image())!)
+                
+           
+                .placeholder({
+                    Image("Marvel_Logo_Red")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .cornerRadius(10)
+                        .padding([.leading, .trailing],20)
+                        .opacity(0.6)
+                })
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .cornerRadius(10)
+                .padding([.leading, .trailing],20)
+                .opacity(0.6)
+                
+            
+//            AsyncImage(url: URL(string: hero.thumbnail.Image())) { Image in
+//               
+//                Image
+//                    .resizable()
+//                    .aspectRatio(contentMode: .fit)
+//                    .cornerRadius(10)
+//                    .padding([.leading, .trailing],20)
+//                    .opacity(0.6)
+//            } placeholder: {
+//                Image(systemName: "photo")
+//                    .resizable()
+//                    .aspectRatio(contentMode: .fit)
+//                    .cornerRadius(10)
+//                    .padding([.leading, .trailing],20)
+//                    .opacity(0.6)
+//            }
 
             
             Text(hero.name)

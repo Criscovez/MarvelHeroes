@@ -6,14 +6,14 @@
 //
 
 import Foundation
-import Combine
 
-final class viewModelHeros: ObservableObject {
+
+final class HerosViewModel: ObservableObject {
     @Published var heros: [HeroeResult] = []
-    @Published var series: [SerieResult] = []
-    @Published var status = Status.none
+
+    @Published var status = Status.loaded
     
-    var suscriptors = Set<AnyCancellable>()
+    //var suscriptors = Set<AnyCancellable>()
     var mocked: Bool = false //para sabrr si estoy en modo Mockeado
     
     init(mocked : Bool = false){
@@ -21,30 +21,31 @@ final class viewModelHeros: ObservableObject {
     }
     
     func getHeros() async {
-        guard let url = URL(string: "https://gateway.marvel.com/v1/public/characters?ts=1&apikey=4c64c5a2e16fb54ba9b851005b3d85fb&hash=09a08b86af7b3f5c25391bbf70249b8e") else { return }
+
         do {
-            let (data, _) = try await URLSession.shared.data(from: url)
-            let response = try JSONDecoder().decode(HeroesResponse.self, from: data)
-            Task{@MainActor in
-                heros = response.data.results
+            let (data, response) = try await URLSession.shared.data(for: BaseNetwork().getSessionHeros())
+            
+            if let resp = response as? HTTPURLResponse {
+                if resp.statusCode == HTTPRresponseCodes.SUCESS {
+                    //modelReturn = try! JSONDecoder().decode([HerosModel].self, from: data)
+                                let modelReturn = try JSONDecoder().decode(HeroesResponse.self, from: data)
+                                Task{@MainActor in
+                                    heros = modelReturn.data.results
+                                }
+                }
             }
+            
+//            let response = try JSONDecoder().decode(HeroesResponse.self, from: data)
+//            Task{@MainActor in
+//                heros = response.data.results
+//            }
         } catch {
-            print("---> error: \(error)")
+            status = Status.error(error: "---> error: \(error)")
+            
         }
     }
     
-    func getSeries(HeroID: String) async {
-        guard let url = URL(string: "https://gateway.marvel.com/v1/public/characters/\(HeroID)/series?apikey=4c64c5a2e16fb54ba9b851005b3d85fb&ts=1&hash=09a08b86af7b3f5c25391bbf70249b8e&orderBy=-modified") else { return }
-        do {
-            let (data, _) = try await URLSession.shared.data(from: url)
-            let response = try JSONDecoder().decode(SeriesResponse.self, from: data)
-            Task{@MainActor in
-                series = (response.data.results)
-            }
-        } catch {
-            print("---> error: \(error)")
-        }
-    }
+
             
 //    func getHeros(filter: String){
 //        status = .loading

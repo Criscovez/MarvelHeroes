@@ -23,7 +23,7 @@ struct SeriesData: Decodable {
 struct SerieResult: Identifiable, Decodable  {
     let id: Int
     let title: String
-    //let description: null
+    let description: String?
     let resourceURI: String
     let urls: [URLElement]
     let startYear, endYear: Int

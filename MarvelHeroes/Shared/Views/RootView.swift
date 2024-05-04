@@ -14,18 +14,14 @@ struct RootView: View {
         //enrutador de vistas.
         
         switch(vm.status){
-        case .none:
+    
             
-            HerosView()
-            //HerosView()
         case .loading:
             LoaderView()
-        case .register:
-            Text("Registro")
         case .error(error: let errorString):
             ErrorView(error: errorString)
        case .loaded:
-            LoaderView()
+            HerosView()
 //            MainView()
         }    }
 }
