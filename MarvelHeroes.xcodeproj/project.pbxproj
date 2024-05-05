@@ -12,6 +12,8 @@
 		24A23C9C2BE42B770098E43D /* SeriesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A23C9B2BE42B770098E43D /* SeriesModel.swift */; };
 		24A23C9F2BE4445F0098E43D /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 24A23C9E2BE4445F0098E43D /* Kingfisher */; };
 		24A23CA12BE5A8E00098E43D /* HeroSeriesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A23CA02BE5A8E00098E43D /* HeroSeriesViewModel.swift */; };
+		24A23CA92BE71CA60098E43D /* ViewInspector in Frameworks */ = {isa = PBXBuildFile; productRef = 24A23CA82BE71CA60098E43D /* ViewInspector */; };
+		24A23CAC2BE720C70098E43D /* MockTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A23CAB2BE720C70098E43D /* MockTest.swift */; };
 		24B95BC72BE0325F00E6C123 /* MarvelHeroesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B95BC62BE0325F00E6C123 /* MarvelHeroesApp.swift */; };
 		24B95BC92BE0325F00E6C123 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B95BC82BE0325F00E6C123 /* ContentView.swift */; };
 		24B95BCB2BE0326000E6C123 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 24B95BCA2BE0326000E6C123 /* Assets.xcassets */; };
@@ -19,13 +21,9 @@
 		24B95BD92BE0326100E6C123 /* MarvelHeroesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B95BD82BE0326100E6C123 /* MarvelHeroesTests.swift */; };
 		24B95BE32BE0326100E6C123 /* MarvelHeroesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B95BE22BE0326100E6C123 /* MarvelHeroesUITests.swift */; };
 		24B95BE52BE0326100E6C123 /* MarvelHeroesUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B95BE42BE0326100E6C123 /* MarvelHeroesUITestsLaunchTests.swift */; };
-		24B95BF42BE0347100E6C123 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B95BF32BE0347100E6C123 /* RootView.swift */; };
-		24B95BF72BE036A100E6C123 /* RootViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B95BF62BE036A100E6C123 /* RootViewModel.swift */; };
-		24B95BFA2BE0371D00E6C123 /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B95BF92BE0371D00E6C123 /* Status.swift */; };
 		24B95BFC2BE037E300E6C123 /* HerosModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B95BFB2BE037E300E6C123 /* HerosModel.swift */; };
 		24B95BFF2BE0517100E6C123 /* BaseNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B95BFE2BE0517100E6C123 /* BaseNetwork.swift */; };
 		24B95C022BE1298900E6C123 /* LoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B95C012BE1298800E6C123 /* LoaderView.swift */; };
-		24B95C042BE12A2D00E6C123 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B95C032BE12A2D00E6C123 /* ErrorView.swift */; };
 		24B95C072BE12BE500E6C123 /* HerosView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B95C062BE12BE500E6C123 /* HerosView.swift */; };
 		24B95C092BE12C8900E6C123 /* HerosViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B95C082BE12C8900E6C123 /* HerosViewModel.swift */; };
 		24B95C0B2BE1390F00E6C123 /* HeroRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B95C0A2BE1390F00E6C123 /* HeroRowView.swift */; };
@@ -54,6 +52,7 @@
 		24A23C992BE2F1AC0098E43D /* HeroSeriesRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroSeriesRowView.swift; sourceTree = "<group>"; };
 		24A23C9B2BE42B770098E43D /* SeriesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesModel.swift; sourceTree = "<group>"; };
 		24A23CA02BE5A8E00098E43D /* HeroSeriesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroSeriesViewModel.swift; sourceTree = "<group>"; };
+		24A23CAB2BE720C70098E43D /* MockTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockTest.swift; sourceTree = "<group>"; };
 		24B95BC32BE0325F00E6C123 /* MarvelHeroes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MarvelHeroes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		24B95BC62BE0325F00E6C123 /* MarvelHeroesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelHeroesApp.swift; sourceTree = "<group>"; };
 		24B95BC82BE0325F00E6C123 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -65,13 +64,9 @@
 		24B95BDE2BE0326100E6C123 /* MarvelHeroesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MarvelHeroesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		24B95BE22BE0326100E6C123 /* MarvelHeroesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelHeroesUITests.swift; sourceTree = "<group>"; };
 		24B95BE42BE0326100E6C123 /* MarvelHeroesUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelHeroesUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		24B95BF32BE0347100E6C123 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
-		24B95BF62BE036A100E6C123 /* RootViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewModel.swift; sourceTree = "<group>"; };
-		24B95BF92BE0371D00E6C123 /* Status.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
 		24B95BFB2BE037E300E6C123 /* HerosModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HerosModel.swift; sourceTree = "<group>"; };
 		24B95BFE2BE0517100E6C123 /* BaseNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNetwork.swift; sourceTree = "<group>"; };
 		24B95C012BE1298800E6C123 /* LoaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderView.swift; sourceTree = "<group>"; };
-		24B95C032BE12A2D00E6C123 /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
 		24B95C062BE12BE500E6C123 /* HerosView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HerosView.swift; sourceTree = "<group>"; };
 		24B95C082BE12C8900E6C123 /* HerosViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HerosViewModel.swift; sourceTree = "<group>"; };
 		24B95C0A2BE1390F00E6C123 /* HeroRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroRowView.swift; sourceTree = "<group>"; };
@@ -90,6 +85,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				24A23CA92BE71CA60098E43D /* ViewInspector in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -103,6 +99,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		24A23CA22BE632980098E43D /* Series */ = {
+			isa = PBXGroup;
+			children = (
+				24A23C972BE2E2C40098E43D /* HeroSeriesView.swift */,
+				24A23C992BE2F1AC0098E43D /* HeroSeriesRowView.swift */,
+			);
+			path = Series;
+			sourceTree = "<group>";
+		};
+		24A23CAA2BE71FEB0098E43D /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				24A23CAB2BE720C70098E43D /* MockTest.swift */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
 		24B95BBA2BE0325F00E6C123 = {
 			isa = PBXGroup;
 			children = (
@@ -176,10 +189,10 @@
 		24B95BF22BE0332300E6C123 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				24A23CAA2BE71FEB0098E43D /* Tools */,
 				24B95C052BE12BD200E6C123 /* Heros */,
-				24B95BF32BE0347100E6C123 /* RootView.swift */,
+				24A23CA22BE632980098E43D /* Series */,
 				24B95C012BE1298800E6C123 /* LoaderView.swift */,
-				24B95C032BE12A2D00E6C123 /* ErrorView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -187,7 +200,6 @@
 		24B95BF52BE034A900E6C123 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				24B95BF62BE036A100E6C123 /* RootViewModel.swift */,
 				24B95C082BE12C8900E6C123 /* HerosViewModel.swift */,
 				24A23CA02BE5A8E00098E43D /* HeroSeriesViewModel.swift */,
 			);
@@ -197,7 +209,6 @@
 		24B95BF82BE0370000E6C123 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				24B95BF92BE0371D00E6C123 /* Status.swift */,
 				24B95BFB2BE037E300E6C123 /* HerosModel.swift */,
 				24A23C9B2BE42B770098E43D /* SeriesModel.swift */,
 			);
@@ -217,8 +228,6 @@
 			children = (
 				24B95C062BE12BE500E6C123 /* HerosView.swift */,
 				24B95C0A2BE1390F00E6C123 /* HeroRowView.swift */,
-				24A23C972BE2E2C40098E43D /* HeroSeriesView.swift */,
-				24A23C992BE2F1AC0098E43D /* HeroSeriesRowView.swift */,
 			);
 			path = Heros;
 			sourceTree = "<group>";
@@ -260,6 +269,9 @@
 				24B95BD62BE0326100E6C123 /* PBXTargetDependency */,
 			);
 			name = MarvelHeroesTests;
+			packageProductDependencies = (
+				24A23CA82BE71CA60098E43D /* ViewInspector */,
+			);
 			productName = MarvelHeroesTests;
 			productReference = 24B95BD42BE0326100E6C123 /* MarvelHeroesTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -316,6 +328,7 @@
 			mainGroup = 24B95BBA2BE0325F00E6C123;
 			packageReferences = (
 				24A23C9D2BE4445F0098E43D /* XCRemoteSwiftPackageReference "kingfisher" */,
+				24A23CA72BE71CA60098E43D /* XCRemoteSwiftPackageReference "ViewInspector" */,
 			);
 			productRefGroup = 24B95BC42BE0325F00E6C123 /* Products */;
 			projectDirPath = "";
@@ -362,18 +375,15 @@
 				24B95BC92BE0325F00E6C123 /* ContentView.swift in Sources */,
 				24A23C982BE2E2C40098E43D /* HeroSeriesView.swift in Sources */,
 				24B95C0B2BE1390F00E6C123 /* HeroRowView.swift in Sources */,
-				24B95BFA2BE0371D00E6C123 /* Status.swift in Sources */,
 				24B95BC72BE0325F00E6C123 /* MarvelHeroesApp.swift in Sources */,
 				24B95BFC2BE037E300E6C123 /* HerosModel.swift in Sources */,
-				24B95BF72BE036A100E6C123 /* RootViewModel.swift in Sources */,
 				24B95C022BE1298900E6C123 /* LoaderView.swift in Sources */,
 				24A23C9A2BE2F1AC0098E43D /* HeroSeriesRowView.swift in Sources */,
 				24A23CA12BE5A8E00098E43D /* HeroSeriesViewModel.swift in Sources */,
 				24A23C9C2BE42B770098E43D /* SeriesModel.swift in Sources */,
+				24A23CAC2BE720C70098E43D /* MockTest.swift in Sources */,
 				24B95C072BE12BE500E6C123 /* HerosView.swift in Sources */,
 				24B95C092BE12C8900E6C123 /* HerosViewModel.swift in Sources */,
-				24B95BF42BE0347100E6C123 /* RootView.swift in Sources */,
-				24B95C042BE12A2D00E6C123 /* ErrorView.swift in Sources */,
 				24B95BFF2BE0517100E6C123 /* BaseNetwork.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -743,6 +753,14 @@
 				minimumVersion = 7.11.0;
 			};
 		};
+		24A23CA72BE71CA60098E43D /* XCRemoteSwiftPackageReference "ViewInspector" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/nalexn/ViewInspector";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.9.11;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -750,6 +768,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 24A23C9D2BE4445F0098E43D /* XCRemoteSwiftPackageReference "kingfisher" */;
 			productName = Kingfisher;
+		};
+		24A23CA82BE71CA60098E43D /* ViewInspector */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 24A23CA72BE71CA60098E43D /* XCRemoteSwiftPackageReference "ViewInspector" */;
+			productName = ViewInspector;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

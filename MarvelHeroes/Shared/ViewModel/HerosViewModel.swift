@@ -11,91 +11,59 @@ import Foundation
 final class HerosViewModel: ObservableObject {
     @Published var heros: [HeroeResult] = []
 
-    @Published var status = Status.loaded
-    
-    //var suscriptors = Set<AnyCancellable>()
-    var mocked: Bool = false //para sabrr si estoy en modo Mockeado
+
+    var mocked: Bool = false //para saber si estoy en modo Mockeado
     
     init(mocked : Bool = false){
         self.mocked = mocked
     }
     
     func getHeros() async {
+        
+        //mockeado
+        if self.mocked{
+            getHerosMock()
+            return
+        }
 
         do {
             let (data, response) = try await URLSession.shared.data(for: BaseNetwork().getSessionHeros())
             
             if let resp = response as? HTTPURLResponse {
                 if resp.statusCode == HTTPRresponseCodes.SUCESS {
-                    //modelReturn = try! JSONDecoder().decode([HerosModel].self, from: data)
                                 let modelReturn = try JSONDecoder().decode(HeroesResponse.self, from: data)
                                 Task{@MainActor in
                                     heros = modelReturn.data.results
                                 }
                 }
             }
-            
-//            let response = try JSONDecoder().decode(HeroesResponse.self, from: data)
-//            Task{@MainActor in
-//                heros = response.data.results
-//            }
+
         } catch {
-            status = Status.error(error: "---> error: \(error)")
+
+            print("---> error: \(error)")
             
         }
     }
-    
 
-            
-//    func getHeros(filter: String){
-//        status = .loading
-//        
-//        //mockeado
-//        if self.mocked{
-//            getHerosMock()
-//            return
-//        }
-//        
-//        URLSession.shared
-//            .dataTaskPublisher(for: BaseNetwork().getHeros())
-//            .tryMap{
-//                guard let response = $0.response as? HTTPURLResponse,
-//                      response.statusCode == 200 else {
-//                    throw URLError(.badServerResponse)
-//                }
-//                
-//                print($0.data)
-//                return $0.data  //devulevo el body de response.
-//            }
-//            .decode(type: Welcome.self, decoder: JSONDecoder())
-//            .receive(on: DispatchQueue.main)
-//            .sink { completion in
-//                switch completion{
-//                case .finished:
-//                    //OK
-//                    self.status = .loaded
-//                case .failure:
-//                    //Error
-//                    self.status = .error(error: "Error en la llamada")
-//                }
-//            } receiveValue: { heros in
-//                //self.heros = heros.data.results
-//            }
-//            .store(in: &suscriptors)
-//    }
-    
-    
-    
-    
     func getHerosMock(){
         //mockear los modelos.
-
-//        let hero1 = Hero(id: UUID(), name: "Goku", image: "https://cdn.alfabetajuega.com/alfabetajuega/2020/12/goku1.jpg?width=300")
-//        
-//        let hero2 = Hero(id: UUID(), name: "Vegeta", image: "https://cdn.alfabetajuega.com/alfabetajuega/2020/12/vegetita.jpg?width=300")
-
         
-        //self.heros = [hero1, hero2]
+        let comicItem1 = ComicsItem(resourceURI: "", name: "")
+        
+        let comicItem2 = ComicsItem(resourceURI: "", name: "")
+        
+        let comics1 = Comics(available: 1, collectionURI: "", items:[comicItem1, comicItem2], returned: 1)
+        
+        let comics2 = Comics(available: 2, collectionURI: "", items:[comicItem1, comicItem2], returned: 2)
+        
+        let hero1 = HeroeResult(id: 1, name: "Hit-Monkey", resultDescription: "", modified: "", thumbnail: Thumbnail(path: "http://i.annihil.us/u/prod/marvel/i/mg/6/30/4ce69c2246c21", thumbnailExtension: "jpg"), resourceURI: "", comics: comics1, series: comics1, stories: Stories(available: 1, collectionURI: "", items: [StoriesItem(resourceURI: "", name: "", type: "")], returned: 1), events: comics1, urls: [])
+        
+        let hero2 = HeroeResult(id: 2, name: "Ghost Rider (Robbie Reyes)", resultDescription: "", modified: "", thumbnail: Thumbnail(path: "http://i.annihil.us/u/prod/marvel/i/mg/1/10/622795c13e687", thumbnailExtension: "jpg"), resourceURI: "", comics: comics1, series: comics1, stories: Stories(available: 1, collectionURI: "", items: [StoriesItem(resourceURI: "", name: "", type: "")], returned: 1), events: comics1, urls: [])
+        
+        let hero3 = HeroeResult(id: 3, name: "Attuma", resultDescription: "", modified: "", thumbnail: Thumbnail(path: "http://i.annihil.us/u/prod/marvel/i/mg/9/90/4ce5a862a6c48", thumbnailExtension: "jpg"), resourceURI: "", comics: comics1, series: comics1, stories: Stories(available: 1, collectionURI: "", items: [StoriesItem(resourceURI: "", name: "", type: "")], returned: 1), events: comics1, urls: [])
+
+
+        self.heros = [hero1, hero2, hero3]
         
     }
     

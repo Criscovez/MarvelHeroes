@@ -16,8 +16,6 @@ struct HerosRowView: View {
             
           
             KFImage.url(URL(string: hero.thumbnail.Image())!)
-                
-           
                 .placeholder({
                     Image("Marvel_Logo_Red")
                         .resizable()
@@ -31,41 +29,22 @@ struct HerosRowView: View {
                 .cornerRadius(10)
                 .padding([.leading, .trailing],20)
                 .opacity(0.6)
+                .id(0)
                 
-            
-//            AsyncImage(url: URL(string: hero.thumbnail.Image())) { Image in
-//               
-//                Image
-//                    .resizable()
-//                    .aspectRatio(contentMode: .fit)
-//                    .cornerRadius(10)
-//                    .padding([.leading, .trailing],20)
-//                    .opacity(0.6)
-//            } placeholder: {
-//                Image(systemName: "photo")
-//                    .resizable()
-//                    .aspectRatio(contentMode: .fit)
-//                    .cornerRadius(10)
-//                    .padding([.leading, .trailing],20)
-//                    .opacity(0.6)
-//            }
-
-            
             Text(hero.name)
                 .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
                 .foregroundStyle(.gray)
                 .bold()
+                .id(1)
             
-//            if let favorite = hero.favorite {
-//                Image(systemName: "heart.circle")
-//                    .resizable()
-//                    .foregroundStyle(favorite ? Color.red : Color.gray)
-//                    .frame(width: 40, height: 40)
-//            }
         }
     }
 }
 
-//#Preview {
-////    HerosRowView(hero: Result(from: <#any Decoder#>, id: UUID(), name: "Goku ", image: "https://cdn.alfabetajuega.com/alfabetajuega/2020/12/goku1.jpg?width=300"))
-//}
+
+#Preview {
+
+
+    HerosRowView(hero: MockTest().MockHeroRow)
+
+}

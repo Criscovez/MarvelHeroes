@@ -13,6 +13,7 @@ struct LoaderView: View {
             .font(.title)
             .foregroundStyle(.red)
             .bold()
+            .id(1)
     }
 }
 

@@ -22,7 +22,8 @@ struct HerosView: View {
                     } label: {
                         //Label (celda personalizada en UIKit)
                         HerosRowView(hero: data)
-                    }
+                    } .id(0)
+                   
               }
             }
         }
