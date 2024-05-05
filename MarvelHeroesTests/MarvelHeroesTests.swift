@@ -139,25 +139,25 @@ final class MarvelHeroesTests: XCTestCase {
     
     }
     
-    func testLoaderView() throws {
-    
-        //instanciamos la vista
-        let view = LoaderView()
-
-                  
-        XCTAssertNotNil(view)
-        
-        let numItems = try view.inspect().count
-        XCTAssertEqual(numItems, 1)
-        
-        //Text del error
-        let text = try view.inspect().find(viewWithId: 1)
-        XCTAssertNotNil(text)
-        
-        let texto = try text.text().string()
-        XCTAssertEqual(texto, "Cargando ...")
-    
-    }
+//    func testLoaderView() throws {
+//    
+//        //instanciamos la vista
+//        let view = LoaderView()
+//
+//                  
+//        XCTAssertNotNil(view)
+//        
+//        let numItems = try view.inspect().count
+//        XCTAssertEqual(numItems, 1)
+//        
+//        //Text del error
+//        let text = try view.inspect().find(viewWithId: 1)
+//        XCTAssertNotNil(text)
+//        
+//        let texto = try text.text().string()
+//        XCTAssertEqual(texto, "Cargando ...")
+//    
+//    }
     
     func testHerosSeriesView() throws {
     
