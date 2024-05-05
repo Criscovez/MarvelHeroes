@@ -10,10 +10,10 @@
 		24A23C982BE2E2C40098E43D /* HeroSeriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A23C972BE2E2C40098E43D /* HeroSeriesView.swift */; };
 		24A23C9A2BE2F1AC0098E43D /* HeroSeriesRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A23C992BE2F1AC0098E43D /* HeroSeriesRowView.swift */; };
 		24A23C9C2BE42B770098E43D /* SeriesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A23C9B2BE42B770098E43D /* SeriesModel.swift */; };
-		24A23C9F2BE4445F0098E43D /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 24A23C9E2BE4445F0098E43D /* Kingfisher */; };
 		24A23CA12BE5A8E00098E43D /* HeroSeriesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A23CA02BE5A8E00098E43D /* HeroSeriesViewModel.swift */; };
 		24A23CA92BE71CA60098E43D /* ViewInspector in Frameworks */ = {isa = PBXBuildFile; productRef = 24A23CA82BE71CA60098E43D /* ViewInspector */; };
 		24A23CAC2BE720C70098E43D /* MockTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A23CAB2BE720C70098E43D /* MockTest.swift */; };
+		24B269192BE841F600382160 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 24B269182BE841F600382160 /* Kingfisher */; };
 		24B95BC72BE0325F00E6C123 /* MarvelHeroesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B95BC62BE0325F00E6C123 /* MarvelHeroesApp.swift */; };
 		24B95BC92BE0325F00E6C123 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B95BC82BE0325F00E6C123 /* ContentView.swift */; };
 		24B95BCB2BE0326000E6C123 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 24B95BCA2BE0326000E6C123 /* Assets.xcassets */; };
@@ -75,7 +75,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				24A23C9F2BE4445F0098E43D /* Kingfisher in Frameworks */,
+				24B269192BE841F600382160 /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -246,7 +246,7 @@
 			);
 			name = MarvelHeroes;
 			packageProductDependencies = (
-				24A23C9E2BE4445F0098E43D /* Kingfisher */,
+				24B269182BE841F600382160 /* Kingfisher */,
 			);
 			productName = MarvelHeroes;
 			productReference = 24B95BC32BE0325F00E6C123 /* MarvelHeroes.app */;
@@ -324,8 +324,8 @@
 			);
 			mainGroup = 24B95BBA2BE0325F00E6C123;
 			packageReferences = (
-				24A23C9D2BE4445F0098E43D /* XCRemoteSwiftPackageReference "kingfisher" */,
 				24A23CA72BE71CA60098E43D /* XCRemoteSwiftPackageReference "ViewInspector" */,
+				24B269172BE841F600382160 /* XCRemoteSwiftPackageReference "kingfisher" */,
 			);
 			productRefGroup = 24B95BC42BE0325F00E6C123 /* Products */;
 			projectDirPath = "";
@@ -741,14 +741,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		24A23C9D2BE4445F0098E43D /* XCRemoteSwiftPackageReference "kingfisher" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/onevcat/kingfisher.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 7.11.0;
-			};
-		};
 		24A23CA72BE71CA60098E43D /* XCRemoteSwiftPackageReference "ViewInspector" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/nalexn/ViewInspector";
@@ -757,18 +749,26 @@
 				minimumVersion = 0.9.11;
 			};
 		};
+		24B269172BE841F600382160 /* XCRemoteSwiftPackageReference "kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.11.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		24A23C9E2BE4445F0098E43D /* Kingfisher */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 24A23C9D2BE4445F0098E43D /* XCRemoteSwiftPackageReference "kingfisher" */;
-			productName = Kingfisher;
-		};
 		24A23CA82BE71CA60098E43D /* ViewInspector */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 24A23CA72BE71CA60098E43D /* XCRemoteSwiftPackageReference "ViewInspector" */;
 			productName = ViewInspector;
+		};
+		24B269182BE841F600382160 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 24B269172BE841F600382160 /* XCRemoteSwiftPackageReference "kingfisher" */;
+			productName = Kingfisher;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
