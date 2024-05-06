@@ -24,7 +24,8 @@ struct HerosView: View {
                         HerosRowView(hero: data)
                     } .id(0)
                    
-              }
+                }
+                .padding(.vertical)
             }
         }
         .onAppear{

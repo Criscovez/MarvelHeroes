@@ -178,8 +178,8 @@
 			children = (
 				24B95BFD2BE0511D00E6C123 /* Services */,
 				24B95BF82BE0370000E6C123 /* Models */,
-				24B95BF52BE034A900E6C123 /* ViewModel */,
 				24B95BF22BE0332300E6C123 /* Views */,
+				24B95BF52BE034A900E6C123 /* ViewModel */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
